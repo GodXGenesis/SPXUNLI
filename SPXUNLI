@@ -1,0 +1,44 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+
+
+function Script()
+local Window = Library.CreateLib("SPXUNLI", "DarkTheme")
+
+
+
+local Tab = Window:NewTab("MAIN")
+local MainSection = Main:NewSection("Main")
+
+
+--Script
+
+MainSection:NewSlider("WalkSpeed", "Changes how fast you walk.", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+MainSection:NewSlider("jumpSpeed", "Changes how fast you jump.", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+MainSection:NewButton("Infinite Gems", "Give you infinite gem script", function()
+    print("Clicked")
+end)
+
+MainSection:NewToggle("ToggleText", "ToggleInfo", function(state)
+    if state then
+        print("Toggle On")
+    else
+        print("Toggle Off")
+    end
+end)
+
+local Credits = Window:NewTab("Credits")
+local CreditsSection = Credits:NewSection("Credits")
+
+CreditsSection:NewLabel("Credits by the SPXgenesis")
+
+end
+
+if game.PlaceID == 6284583030 then
+Script()
